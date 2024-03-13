@@ -1,0 +1,155 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Sample API",
+      "version": "1.0.0",
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000"
+      }
+    ],
+    "paths": {
+      "/api/{modelName}": {
+        "get": {
+          "summary": "Get all items of a model",
+          "parameters": [
+            {
+              "name": "modelName",
+              "in": "path",
+              "description": "Name of the model",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response"
+            }
+          }
+        },
+        "post": {
+          "summary": "Create an item in the model",
+          "parameters": [
+            {
+              "name": "modelName",
+              "in": "path",
+              "description": "Name of the model",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Object representing the new item",
+              "required": true,
+              "schema": {}
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Item created successfully"
+            }
+          }
+        }
+      },
+      "/api/{modelName}/{id}": {
+        "get": {
+          "summary": "Get an item by ID",
+          "parameters": [
+            {
+              "name": "modelName",
+              "in": "path",
+              "description": "Name of the model",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the item",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response"
+            }
+          }
+        },
+        "put": {
+          "summary": "Update an item by ID",
+          "parameters": [
+            {
+              "name": "modelName",
+              "in": "path",
+              "description": "Name of the model",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the item",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Updated object",
+              "required": true,
+              "schema": {}
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Item updated successfully"
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete an item by ID",
+          "parameters": [
+            {
+              "name": "modelName",
+              "in": "path",
+              "description": "Name of the model",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the item",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Item deleted successfully"
+            }
+          }
+        }
+      }
+    }
+  }
+  
